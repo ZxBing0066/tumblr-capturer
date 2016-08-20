@@ -6,41 +6,39 @@ import threading
 
 # Authenticate via OAuth
 client = pytumblr.TumblrRestClient(
-    'mLvXdqzLEzBIqS3JO7IyDmjI8jdY61qMDTRzTUdf6ojmXOYufX',
-    'QYUMU4tuThEGmT0rDxbAL8layjceipQC9S5owbkc3u6ytBxJVB',
-    't8ZH4zGU544BxJXrnQY9WcOC7Ag6FmUAFzg6IpI9W4EgVUvHUc',
-    'FvCuhfwK2trrxD4MWP3HNmHLGnkgxxfLsgkgbfCUSyuVzEVYN6'
+  'mLvXdqzLEzBIqS3JO7IyDmjI8jdY61qMDTRzTUdf6ojmXOYufX'
 )
 
 # Make the request
-#likes = client.likes()
+# likes = client.likes()
 
-#print(likes)
+# print(likes)
 
-#followings = client.following()['blogs']
-#followings = client.following(offset=0, limit=10)['blogs']
+# followings = client.following()['blogs']
+# followings = client.following(offset=0, limit=10)['blogs']
 
-#for following in followings:
-    #print(following['name'])
-    # pass
+# for following in followings:
+#     print(following['name'])
+#     pass
+
 # info = client.info()
 # print(info)
 
-def getFollowing(offset=0, limit=20):
-    return client.following(offset=offset, limit=limit)['blogs']
+# def getFollowing(offset=0, limit=20):
+#     return client.following(offset=offset, limit=limit)['blogs']
 
-def getAllFollowing():
-    allFollowing = []
-    currentLength = 0
-    maxLength = info['user']['following']
-    while currentLength < maxLength:
-        following = client.following(offset=currentLength, limit=20)['blogs']
-        print(currentLength)
-        for _following in following:
-            print(_following['name'])
-        allFollowing.extend(following)
-        currentLength += len(following)
-    return allFollowing
+# def getAllFollowing():
+#     allFollowing = []
+#     currentLength = 0
+#     maxLength = info['user']['following']
+#     while currentLength < maxLength:
+#         following = client.following(offset=currentLength, limit=20)['blogs']
+#         print(currentLength)
+#         for _following in following:
+#             print(_following['name'])
+#         allFollowing.extend(following)
+#         currentLength += len(following)
+#     return allFollowing
 
 # allFollowing = getAllFollowing()
 # for following in allFollowing:
